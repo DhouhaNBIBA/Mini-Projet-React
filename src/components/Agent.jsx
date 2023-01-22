@@ -4,19 +4,19 @@ import Card from 'react-bootstrap/Card';
 
 function Agent() {
 //** nombre total des agents sans l’agent avec l’id 000 */
-    const totalAgents = jsonData.results.filter(agent => agent.id !== '000');
+    const totalAgents = jsonData.results;
     const total = totalAgents.length;
 //** nombre total des agents actives sans l’agent avec l’id 000 */
-    const activeAgents = jsonData.results.filter(agent => agent.status === "active"&& agent.id !== "000");
+    const activeAgents = jsonData.results.filter(agent => agent.status === "active");
     const active = activeAgents.length;
 //** nombre total des agents déconnectés sans l’agent avec l’id 000 */
-    const NeverConnectedAgent = jsonData.results.filter(agent => agent.status === "never_connected"&& agent.id !== "000");
+    const NeverConnectedAgent = jsonData.results.filter(agent => agent.status === "never_connected");
     const NeverConnected = NeverConnectedAgent.length;
 //** nombre total des agents en attente sans l’agent avec l’id 000 */
-    const PendingAgent = jsonData.results.filter(agent => agent.status === "pending"&& agent.id !== "000");
+    const PendingAgent = jsonData.results.filter(agent => agent.status === "pending");
     const Pending = PendingAgent.length;
 //** nombre total des agents agents jamais connectés sans l’agent avec l’id 000 */
-    const DisconnectedAgent = jsonData.results.filter(agent => agent.status === "disconnected"&& agent.id !== "000");
+    const DisconnectedAgent = jsonData.results.filter(agent => agent.status === "disconnected");
     const Disconnected = DisconnectedAgent.length;
     return (
     <div className="allCards">
